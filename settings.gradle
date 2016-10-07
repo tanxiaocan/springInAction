@@ -1,0 +1,4 @@
+rootProject.name = 'springInAction'
+include 'springInAction-chap1'
+include 'springInAction-DAO'
+
