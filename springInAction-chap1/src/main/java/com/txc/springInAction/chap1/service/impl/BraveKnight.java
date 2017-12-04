@@ -2,13 +2,15 @@ package com.txc.springInAction.chap1.service.impl;
 
 import com.txc.springInAction.chap1.service.Knight;
 import com.txc.springInAction.chap1.service.Quest;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 /**
- * Created by tanxiaocan on 2016/10/7.
+ * Created by tanxiaocan on 2017/12/4.
  */
-@Data
-public class DamselRescuingKnight implements Knight {
+@AllArgsConstructor
+@NoArgsConstructor
+public class BraveKnight implements Knight{
     private Quest quest;
 
     @Override
