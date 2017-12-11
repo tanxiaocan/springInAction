@@ -11,6 +11,10 @@ import lombok.Data;
 public class DamselRescuingKnight implements Knight {
     private Quest quest;
 
+    public DamselRescuingKnight(){
+        System.out.println("DamselRescuingKnight【构造器】调用无参构造器实例化");
+    }
+
     @Override
     public void embarkOnQuest() {
         quest.embark();

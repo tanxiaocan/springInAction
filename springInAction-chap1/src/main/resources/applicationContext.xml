@@ -9,24 +9,30 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="quest" class="com.txc.springInAction.chap1.service.impl.SlayDragonQuest">
-        <property name="printStream" value="#{T(System).out}"/>
+        <constructor-arg value="#{T(System).out}"/>
     </bean>
 
-    <bean id="knight" class="com.txc.springInAction.chap1.service.impl.BraveKnight">
-        <property name="quest" ref="quest"/>
+    <bean id="knight" class="com.txc.springInAction.chap1.service.impl.BraveKnight" init-method="myInit" destroy-method="myDestroy">
+        <!--<constructor-arg ref="quest"/>-->
+        <property name="quest" ref="quest"></property>
     </bean>
 
-    <bean id="minstrel" class="com.txc.springInAction.chap1.service.impl.Minstrel">
-        <property name="stream" value="#{T(System).out}"/>
-    </bean>
+    <bean id="minstrel" class="com.txc.springInAction.chap1.service.impl.Minstrel"/>
 
-    <aop:config>
-        <aop:aspect ref="minstrel">
-            <aop:pointcut id="embark" expression="execution(* com.txc.springInAction.chap1.service.impl.BraveKnight.*(..))"/>
-            <aop:before pointcut-ref="embark" method="singBeforeQuest"/>
-            <aop:after method="singAfterQuest" pointcut-ref="embark" />
-        </aop:aspect>
-    </aop:config>
+    <bean id="beanPostProcessor" class="com.txc.springInAction.chap1.compnant.MyBeanPostProcessor"/>
+
+    <bean id="instantiationAwareBeanPostProcessor" class="com.txc.springInAction.chap1.compnant.MyInstantiationAwareBeanPostProcessor"/>
+
+    <bean id="beanFactoryPostProcessor" class="com.txc.springInAction.chap1.compnant.MyBeanFactoryPostProcessor"/>
+
+
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="minstrel">-->
+            <!--<aop:pointcut id="embark" expression="execution(* com.txc.springInAction.chap1.service.impl.HH.test(..))"/>-->
+            <!--<aop:before pointcut-ref="embark" method="singBeforeQuest"/>-->
+            <!--<aop:after method="singAfterQuest" pointcut-ref="embark" />-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
 
 
 

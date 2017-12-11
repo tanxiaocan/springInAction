@@ -10,11 +10,15 @@ import java.io.PrintStream;
 /**
  * Created by tanxiaocan on 2017/12/4.
  */
-//@AllArgsConstructor
-//@NoArgsConstructor
+
 @Data
 public class SlayDragonQuest implements Quest {
     private PrintStream printStream;
+
+    public SlayDragonQuest(PrintStream printStream){
+        this.printStream = printStream;
+        System.out.println("SlayDragonQuest【构造器】调用构造器实例化");
+    }
 
     @Override
     public void embark() {

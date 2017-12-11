@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -11,12 +11,18 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile group: 'org.springframework', name: 'spring-beans', version: '3.2.0.RELEASE'
-    compile group: 'org.springframework', name: 'spring-context', version: '3.2.0.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework', name: 'spring-beans', version: '5.0.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.2.RELEASE'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
     compile group: 'javax.inject', name: 'javax.inject', version: '1'
-//    compile group: 'org.springframework', name: 'spring-core', version: '3.2.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: '5.0.2.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-test
+    testCompile group: 'org.springframework', name: 'spring-test', version: '5.0.2.RELEASE'
+    // https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules
+    testCompile group: 'com.github.stefanbirkner', name: 'system-rules', version: '1.17.0'
+
+
 
 
 }
