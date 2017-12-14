@@ -3,4 +3,5 @@ include 'springInAction-chap1'
 include 'springInAction-DAO'
 include 'springInAction-chap2'
 include 'springInAction-aop'
+include 'springInAction-web'
 
